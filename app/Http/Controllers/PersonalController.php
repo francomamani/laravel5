@@ -16,7 +16,7 @@ class PersonalController extends Controller
 /*        return response()->json(Personal::orderBy('created_at', 'desc')
                                 ->with('compraMateriales')
                                 ->get());      */  
-        return response()->json(Personal::get());
+        return response()->json(Personal::orderBy('id', 'desc')->get());
     }
 
     /**

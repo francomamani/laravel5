@@ -17,14 +17,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => ['cors']], function() {
+//Route::group(['middleware' => ['cors']], function() {
 	Route::resource('personals', 'PersonalController');
 	Route::resource('compra_materials', 'CompraMaterialController');
 	Route::resource('personals.compra_materials', 'PersonalCompraMaterialController');
 
 	Route::get('compra_materiales_personal/{personal_id}', 
 				'PersonalCompraMaterialController@paginacion');
-});
+//});
 
 /*Route::get('personal_por_carnet/{carnet}', 'PersonalController@personalPorCarnet')
 	 ->where('carnet', '\d{6,8}(-\d[A-Z][ ]?)?(OR|LP|CB|PT|SC|CH|PD|BN|TJ)?');
